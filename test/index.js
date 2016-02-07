@@ -1,2 +1,4 @@
-require('app-module-path').addPath(__dirname + './../');
-require('./lib');
+import './config';
+import './lib';
+import './utils/customPropTypes';
+import './utils/style';
