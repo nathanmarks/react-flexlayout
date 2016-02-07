@@ -11,5 +11,3 @@
 ```bash
 $ npm install react-flexlayout --save
 ```
-
-#### Components

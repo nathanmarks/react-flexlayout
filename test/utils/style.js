@@ -88,3 +88,32 @@ Test('Creating style objects from prop: inline', t => {
 
   t.end();
 });
+
+Test('Creating style objects from prop: flex', t => {
+
+  t.deepEquals(createStyleFromProps({
+    flex: true
+  }), {
+    flex: '0 1 auto'
+  }, 'should create flex shorthand from boolean value');
+
+  t.deepEquals(createStyleFromProps({
+    flex: false
+  }), {
+    flex: '0 0 auto'
+  }, 'should create flex shorthand from boolean value');
+
+  t.deepEquals(createStyleFromProps({
+    flex: 32
+  }), {
+    flex: '0 1 32%'
+  }, 'should convert a number to % for flex-basis in shorthand');
+
+  t.deepEquals(createStyleFromProps({
+    flex: '5 2 auto'
+  }), {
+    flex: '5 2 auto'
+  }, 'should pass through other string values');
+
+  t.end();
+});
