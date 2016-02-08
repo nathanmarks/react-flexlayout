@@ -5,12 +5,13 @@ import Parent from 'lib/components/Parent';
 
 const shallowRenderer = TestUtils.createRenderer();
 
-Test('Parent', t => {
+Test.only('Parent', t => {
 
   shallowRenderer.render(<Parent />);
   const component = shallowRenderer.getRenderOutput();
 
   t.ok(TestUtils.isElement(component), 'is a react element');
+  t.equals(component.props.style.display, 'flex', 'should set the display property');
   t.end();
 });
 

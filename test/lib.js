@@ -1,7 +1,7 @@
 import Test from 'blue-tape';
-import FlexLayout from 'lib/index.js';
+import { flexLayout } from 'lib/index.js';
 
-Test('Module', t => {
-  t.ok(FlexLayout, 'library should exist');
+Test('react-flexlayout', t => {
+  t.ok(flexLayout, 'core hoc should exist');
   t.end();
 });
