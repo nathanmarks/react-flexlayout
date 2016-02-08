@@ -1,6 +1,6 @@
 {
   "name": "@nmarks/react-flexlayout",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "React responsive layout helpers",
   "main": "dist/index.js",
   "scripts": {
