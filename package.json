@@ -1,5 +1,5 @@
 {
-  "name": "react-flexlayout",
+  "name": "@poweredbysearch/react-flexlayout",
   "version": "0.0.2",
   "description": "React responsive layout helpers",
   "main": "dist/index.js",
@@ -14,7 +14,7 @@
     "dev": "nodemon -w lib -w test --exec \"npm run -s lint && npm run -s test:dev\"",
     "lint": "eslint lib",
     "precommit": "npm run docs",
-    "prepublish": "in-publish && npm run build && npm run docs || not-in-publish",
+    "prepublish": "in-publish && npm run build || not-in-publish",
     "test": "babel-node test/index.js",
     "test:dev": "npm run -s test | tap-spec"
   },

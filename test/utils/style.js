@@ -6,18 +6,21 @@ Test('Creating style objects from prop: align', t => {
   t.deepEquals(createStyleFromProps({
     align: 'start'
   }), {
+    display: 'flex',
     justifyContent: 'flex-start'
   });
 
   t.deepEquals(createStyleFromProps({
     align: 'end'
   }), {
+    display: 'flex',
     justifyContent: 'flex-end'
   });
 
   t.deepEquals(createStyleFromProps({
     align: 'start end'
   }), {
+    display: 'flex',
     justifyContent: 'flex-start',
     alignItems: 'flex-end'
   });
@@ -25,6 +28,7 @@ Test('Creating style objects from prop: align', t => {
   t.deepEquals(createStyleFromProps({
     align: 'space-between center'
   }), {
+    display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center'
   });
@@ -37,18 +41,21 @@ Test('Creating style objects from prop: alignContent', t => {
   t.deepEquals(createStyleFromProps({
     alignContent: 'start'
   }), {
+    display: 'flex',
     alignContent: 'flex-start'
   });
 
   t.deepEquals(createStyleFromProps({
     alignContent: 'end'
   }), {
+    display: 'flex',
     alignContent: 'flex-end'
   });
 
   t.deepEquals(createStyleFromProps({
     alignContent: 'center'
   }), {
+    display: 'flex',
     alignContent: 'center'
   });
 
@@ -60,12 +67,14 @@ Test('Creating style objects from prop: flow', t => {
   t.deepEquals(createStyleFromProps({
     flow: 'row-reverse wrap'
   }), {
+    display: 'flex',
     flexFlow: 'row-reverse wrap'
   });
 
   t.deepEquals(createStyleFromProps({
     flow: 'column'
   }), {
+    display: 'flex',
     flexFlow: 'column'
   });
 

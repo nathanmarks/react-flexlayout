@@ -5,7 +5,7 @@ import Parent from 'lib/components/Parent';
 
 const shallowRenderer = TestUtils.createRenderer();
 
-Test.only('Parent', t => {
+Test('Parent', t => {
 
   shallowRenderer.render(<Parent />);
   const component = shallowRenderer.getRenderOutput();
