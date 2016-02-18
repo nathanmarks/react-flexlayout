@@ -1,7 +1,7 @@
 import React from 'react';
 import Test from 'blue-tape';
 import TestUtils from 'react-addons-test-utils';
-import Row from 'lib/components/grid/Row';
+import Row from 'lib/components/Row';
 
 const shallowRenderer = TestUtils.createRenderer();
 

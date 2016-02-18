@@ -1,26 +1,25 @@
 import React from 'react';
 import Test from 'blue-tape';
 import TestUtils from 'react-addons-test-utils';
-import Parent from 'lib/components/Parent';
+import ParentLayout from 'lib/components/Layout';
 
 const shallowRenderer = TestUtils.createRenderer();
 
-Test('Parent', t => {
+Test('ParentLayout', t => {
 
-  shallowRenderer.render(<Parent />);
+  shallowRenderer.render(<ParentLayout />);
   const component = shallowRenderer.getRenderOutput();
 
   t.ok(TestUtils.isElement(component), 'is a react element');
-  t.equals(component.props.style.display, 'flex', 'should set the display property');
   t.end();
 });
 
-Test('Parent - Various Props', t => {
+Test('ParentLayout - Various Props', t => {
 
   const child = <h1>Hello World</h1>;
 
   shallowRenderer.render(
-    <Parent
+    <ParentLayout
       align="start center"
       flow="column"
       style={{
@@ -28,7 +27,7 @@ Test('Parent - Various Props', t => {
       }}
     >
       {child}
-    </Parent>
+    </ParentLayout>
   );
 
   const component = shallowRenderer.getRenderOutput();

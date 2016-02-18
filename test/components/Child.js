@@ -1,32 +1,31 @@
 import React from 'react';
 import Test from 'blue-tape';
 import TestUtils from 'react-addons-test-utils';
-import Child from 'lib/components/Child';
+import ChildLayout from 'lib/components/Layout';
 
 const shallowRenderer = TestUtils.createRenderer();
 
-Test('Child', t => {
+Test('ChildLayout', t => {
 
-  shallowRenderer.render(<Child />);
+  shallowRenderer.render(<ChildLayout />);
   const component = shallowRenderer.getRenderOutput();
   t.ok(TestUtils.isElement(component), 'is a react element');
-  t.equals(component.props.style.flex, '0 1 auto', 'has default flex styles');
   t.end();
 });
 
-Test('Child - Various Props', t => {
+Test('ChildLayout - Various Props', t => {
 
   const child = <h1>Hello World</h1>;
 
   shallowRenderer.render(
-    <Child
+    <ChildLayout
       flex={false}
       style={{
         backgroundColor: 'red'
       }}
     >
       {child}
-    </Child>
+    </ChildLayout>
   );
 
   const component = shallowRenderer.getRenderOutput();
@@ -39,10 +38,10 @@ Test('Child - Various Props', t => {
   t.end();
 });
 
-Test('Child - Overriding flex-grow shorthand', t => {
+Test('ChildLayout - Overriding flex-grow shorthand', t => {
 
   shallowRenderer.render(
-    <Child
+    <ChildLayout
       flex
       grow={4}
     />
@@ -55,10 +54,10 @@ Test('Child - Overriding flex-grow shorthand', t => {
   t.end();
 });
 
-Test('Child - Overriding flex-shrink shorthand', t => {
+Test('ChildLayout - Overriding flex-shrink shorthand', t => {
 
   shallowRenderer.render(
-    <Child
+    <ChildLayout
       flex
       shrink={0}
     />
@@ -71,10 +70,10 @@ Test('Child - Overriding flex-shrink shorthand', t => {
   t.end();
 });
 
-Test('Child - Overriding flex-grow, flex-shrink, and flex-basis shorthand', t => {
+Test('ChildLayout - Overriding flex-grow, flex-shrink, and flex-basis shorthand', t => {
 
   shallowRenderer.render(
-    <Child
+    <ChildLayout
       flex={33}
       grow
       shrink={false}
@@ -88,10 +87,10 @@ Test('Child - Overriding flex-grow, flex-shrink, and flex-basis shorthand', t =>
   t.end();
 });
 
-Test('Child - Flex shorthand explicit shortcut', t => {
+Test('ChildLayout - Flex shorthand explicit shortcut', t => {
 
   shallowRenderer.render(
-    <Child
+    <ChildLayout
       flex="3 2 50%"
     />
   );
@@ -103,10 +102,10 @@ Test('Child - Flex shorthand explicit shortcut', t => {
   t.end();
 });
 
-Test('Child - Overriding explicit shortcut with props', t => {
+Test('ChildLayout - Overriding explicit shortcut with props', t => {
 
   shallowRenderer.render(
-    <Child
+    <ChildLayout
       flex="0 3 auto"
       grow
     />
