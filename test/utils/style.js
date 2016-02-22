@@ -1,5 +1,5 @@
 import Test from 'blue-tape';
-import { createStyleFromProps } from 'lib/utils/style';
+import { createStyleFromProps, styleReducer } from 'lib/utils/style';
 
 Test('Creating style objects from prop: align', t => {
 
@@ -123,6 +123,25 @@ Test('Creating style objects from prop: flex', t => {
   }), {
     flex: '5 2 auto'
   }, 'should pass through other string values');
+
+  t.end();
+});
+
+Test('Creating memoized syle objects', t => {
+
+  t.deepEquals(styleReducer({
+    align: 'start'
+  }), {
+    display: 'flex',
+    justifyContent: 'flex-start'
+  });
+
+  t.deepEquals(styleReducer({
+    alignContent: 'start'
+  }), {
+    display: 'flex',
+    alignContent: 'flex-start'
+  });
 
   t.end();
 });
